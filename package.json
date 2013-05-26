@@ -1,0 +1,27 @@
+{
+  "author": "Robbie Bardijn",
+  "name": "Express-Instagram-app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "matchdep": "*"
+  },
+  "devDependencies": {
+    "express": "3.1.0",
+    "jade": "*",
+    "grunt": "~0.4.1",
+    "nodemon": "*",
+    "grunt-contrib-compass": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
