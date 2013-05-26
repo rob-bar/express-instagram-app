@@ -3,6 +3,7 @@
   "name": "Express-Instagram-app",
   "version": "0.0.1",
   "private": true,
+  "main": "app",
   "scripts": {
     "start": "nodemon app.js"
   },
