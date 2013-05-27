@@ -1,11 +1,9 @@
 (function() {
-  var app, express, http, path, routes, user;
+  var app, express, http, path, routes;
 
   express = require('express');
 
   routes = require('./routes');
-
-  user = require('./routes/user');
 
   http = require('http');
 
@@ -30,7 +28,7 @@
   });
 
   app.get('/', function(req, res) {
-    return res.render("layout", {
+    return res.render("index", {
       title: "test"
     });
   });

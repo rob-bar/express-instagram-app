@@ -1,6 +1,5 @@
 express = require('express')
 routes = require('./routes')
-user = require('./routes/user')
 http = require('http')
 path = require('path')
 app = express()
@@ -21,6 +20,6 @@ app.configure 'development', ->
 
 
 app.get '/', (req,res) ->
-  res.render("layout", {title: "test"})
+  res.render("index", {title: "test"})
 
 module.exports = app
