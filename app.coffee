@@ -20,6 +20,7 @@ app.configure 'development', ->
 
 
 app.get '/', (req,res) ->
+  console.log "YOUYO"
   res.render("index", {title: "test"})
 
 module.exports = app
