@@ -20,7 +20,8 @@ app.configure 'development', ->
 
 
 app.get '/', (req,res) ->
-  console.log "YOUYO"
   res.render("index", {title: "test"})
+
+app.get '/instagram', routes.instagram.all
 
 module.exports = app
