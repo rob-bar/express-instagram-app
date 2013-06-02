@@ -23,5 +23,6 @@ app.get '/', (req,res) ->
   res.render("index", {title: "test"})
 
 app.get '/instagram', routes.instagram.all
+app.get '/tag/:tag', routes.instagram.tag
 
 module.exports = app

@@ -1,31 +1,30 @@
-https = require('https')
+c = require('../config/config.coffee')
+h = require('../config/helper.coffee')
 exports.instagram =
-	all: (req, resi) ->
+	all: (req, res) ->
 		data = []
 		options =
 			host: 'api.instagram.com'
-			path: '/v1/users/9205448/media/recent/?access_token=9205448.ab103e5.40f43201df12427bb276eff4d2ca7348'
+			path: "/v1/users/#{c.config.instagram.ID}/media/recent/?access_token=#{c.config.instagram.token}"
 			method: "GET"
 			headers:
 				'Content-Type': 'application/json'
 
-		request = https.request options, (res)->
-			data = []
+		h.help.request options, (data)->
+			res.render "all", pics: data.data, title: "all pics"
 
-			res.on 'data', (chunk)->
-				console.log chunk
-				data.push(chunk)
+		@
+	tag: (req, res) ->
+		data = []
 
-			res.on 'error', (e)->
-				console.log "Got error: #{e.message}"
+		options =
+			host: 'api.instagram.com'
+			path: "/v1/tags/#{req.params.tag}/media/recent/?access_token=#{c.config.instagram.token}"
+			method: "GET"
+			headers:
+				'Content-Type': 'application/json'
 
-			res.on 'end', ()->
-				data = JSON.parse data.join('')
-
-				for prop in data.data
-					console.log prop
-				resi.render "all", pics: data.data, title: "all pics"
-
-		request.end()
+		h.help.request options, (data)->
+			res.render "all", pics: data.data, title: "all pics"
 
 		@
