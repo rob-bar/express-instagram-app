@@ -26,5 +26,7 @@ app.get '/github', routes.github.all
 app.get '/twitter', routes.twitter.all
 app.get '/twitter/tag/:tag', routes.twitter.tag
 
+app.get '/delicious', routes.delicious.all
+app.get '/delicious/tag/:tag', routes.delicious.tag
 
 module.exports = app

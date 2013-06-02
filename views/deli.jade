@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h1 My links on Delicious
+	each link in links
+		a(href="#{link.u}", style="display:block;")= link.u
+		p
+			each tag in link.t
+				span(style="color: blue;") ##{tag},&nbsp;

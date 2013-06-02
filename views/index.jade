@@ -1,5 +1,27 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	h1= title
+	p Welcome to #{title}
+
+	h2 twitter
+	p
+		a(href="/twitter") My tweets
+	p
+		a(href="/twitter/tag/fronteers12") My tweets by tag fronteers12
+
+	h2 instagram
+	p
+		a(href="/instagram") My pictures
+	p
+		a(href="/instagram/tag/thisismycrazytagkungfu") My pictures by tag thisismycrazytagkungfu
+
+	h2 delicious
+	p
+		a(href="/delicious") My links
+	p
+		a(href="/delicious/tag/javascript") My links by tag javascript
+
+	h2 github
+	p
+		a(href="/github") My repos

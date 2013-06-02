@@ -7,3 +7,6 @@ exports.site =
 	twitter:
 		screenname: "robbiebardijn"
 		hashtag: "sidebite"
+	deli:
+		username: "robbie_bardijn"
+		hashtag: "sidebite"
