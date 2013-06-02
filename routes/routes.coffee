@@ -17,7 +17,7 @@ exports.instagram =
 	tag: (req, res) ->
 		options =
 			host: 'api.instagram.com'
-			path: "/v1/tags/#{req.params.tag}/media/recent/?access_token=#{config.site.instagram.token}"
+			path: "/v1/tags/#{req.params.tag}/media/recent/?access_token=#{config.site.instagram.token}&count=-1"
 			method: "GET"
 			headers:
 				'Content-Type': 'application/json'
