@@ -1,0 +1,6 @@
+extends layout
+
+block content
+	h1 searched on ##{tag}
+	each pic in pics
+		img(src=pic.images.thumbnail.url, alt="test")
