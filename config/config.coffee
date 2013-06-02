@@ -4,3 +4,5 @@ exports.site =
 		ID: "9205448"
 	github:
 		username: "rob-bar"
+	twitter:
+		screenname: "robbiebardijn"

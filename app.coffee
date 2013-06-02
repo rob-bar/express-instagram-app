@@ -21,6 +21,7 @@ app.get '/', routes.other.index
 app.get '/instagram', routes.instagram.all
 app.get '/tag/:tag', routes.instagram.tag
 app.get '/github', routes.github.all
+app.get '/twitter', routes.twitter.all
 
 
 module.exports = app

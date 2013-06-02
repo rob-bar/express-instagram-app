@@ -37,8 +37,22 @@ exports.github =
 				'user-agent': req.get('user-agent')
 
 		h.help.request options, (data)->
-			console.log data
 			res.render "repos", repos: data, title: "all github repos"
+		@
+
+exports.twitter =
+	all: (req, res) ->
+		options =
+			host: "api.twitter.com"
+			path: "/1/statuses/user_timeline.json?include_entities=true&include_rts=1&screen_name=#{config.site.twitter.screenname}&count=200"
+			method: "GET"
+			headers:
+				'Content-Type': 'application/json'
+				'user-agent': req.get('user-agent')
+
+		h.help.request options, (data)->
+			console.log data
+			res.render "tweets", tweets: data, title: "all my tweets"
 		@
 
 exports.other =

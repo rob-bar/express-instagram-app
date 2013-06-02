@@ -1,0 +1,8 @@
+extends layout
+
+block content
+	h1 My tweets on twitter
+	each tweet in tweets
+		h5= tweet.text
+		each tag in tweet.entities.hashtags
+			p(style="color: blue;") ##{tag.text}
