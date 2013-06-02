@@ -1,5 +1,6 @@
 config = require('../config/config.coffee')
 h = require('../config/helper.coffee')
+_ = require('underscore')
 exports.instagram =
 	all: (req, res) ->
 		options =
@@ -51,11 +52,28 @@ exports.twitter =
 				'user-agent': req.get('user-agent')
 
 		h.help.request options, (data)->
-			console.log data
 			res.render "tweets", tweets: data, title: "all my tweets"
 		@
+	tag: (req, res) ->
+		options =
+			host: "api.twitter.com"
+			path: "/1/statuses/user_timeline.json?include_entities=true&include_rts=1&screen_name=#{config.site.twitter.screenname}&count=200"
+			method: "GET"
+			headers:
+				'Content-Type': 'application/json'
+				'user-agent': req.get('user-agent')
 
+		h.help.request options, (data)->
+			data = _.filter data, (tweet) ->
+				for hashtag in tweet.entities.hashtags
+					if hashtag.text is req.params.tag
+						return true
+				return false
+
+			res.render "tweetsbytag", tweets: data, title: "all my tweets", tag: req.params.tag
+		@
 exports.other =
 	index: (req, res) ->
+		console.log _
 		res.render "index", title: "Social api testing in node"
 		@
