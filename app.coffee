@@ -20,5 +20,7 @@ app.configure 'development', ->
 app.get '/', routes.other.index
 app.get '/instagram', routes.instagram.all
 app.get '/tag/:tag', routes.instagram.tag
+app.get '/github', routes.github.all
+
 
 module.exports = app

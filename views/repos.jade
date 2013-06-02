@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	h1 My repos on github
+	each repo in repos
+		a(href=repo.html_url, target="_blank")= repo.html_url
+		br
